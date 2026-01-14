@@ -1,0 +1,47 @@
+# Netlify Build Configuration for SwapBox Jekyll Site
+
+[build]
+  # Build command - tells Netlify how to build your Jekyll site
+  command = "bundle install && bundle exec jekyll build"
+
+  # Publish directory - where the built site files are
+  publish = "_site"
+
+  # Environment variables for the build
+  [build.environment]
+    RUBY_VERSION = "3.2.0"
+    JEKYLL_ENV = "production"
+
+# Redirect rules (optional - for clean URLs)
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Plugin configuration (if needed)
+[[plugins]]
+  package = "netlify-plugin-jekyll-cache"
+
+# Context-specific build settings
+[context.production]
+  command = "bundle install && bundle exec jekyll build"
+
+[context.deploy-preview]
+  command = "bundle install && bundle exec jekyll build --drafts"
+
+[context.branch-deploy]
+  command = "bundle install && bundle exec jekyll build"

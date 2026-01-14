@@ -4,8 +4,8 @@ backend:
   name: git-gateway
   branch: main
 
-# Optional: Enable local development
-local_backend: true
+# Optional: Enable local development (uncomment the line below for local testing)
+# local_backend: true
 
 # Media files will be stored in the repo under images/uploads
 media_folder: "images/uploads"
@@ -21,7 +21,7 @@ collections:
     files:
       - name: "general"
         label: "General Settings"
-        file: "content/settings/general.json"
+        file: "content/_data/settings/general.json"
         fields:
           - {label: "Site Title", name: "site_title", widget: "string", default: "SwapBox"}
           - {label: "Tagline", name: "tagline", widget: "string"}
@@ -48,7 +48,7 @@ collections:
   # How It Works Steps
   - name: "steps"
     label: "How It Works Steps"
-    folder: "content/steps"
+    folder: "content/_steps"
     create: true
     slug: "step-{{step_number}}"
     fields:
@@ -60,7 +60,7 @@ collections:
   # SwapBox Features
   - name: "features"
     label: "SwapBox Features"
-    folder: "content/features"
+    folder: "content/_features"
     create: true
     slug: "{{slug}}"
     fields:
@@ -72,7 +72,7 @@ collections:
   # Pricing Plans
   - name: "pricing"
     label: "Pricing Plans"
-    folder: "content/pricing"
+    folder: "content/_pricing"
     create: true
     slug: "{{slug}}"
     fields:
@@ -87,7 +87,7 @@ collections:
   # Benefits (Why Choose Us)
   - name: "benefits"
     label: "Why Choose Us"
-    folder: "content/benefits"
+    folder: "content/_benefits"
     create: true
     slug: "{{slug}}"
     fields:
@@ -99,7 +99,7 @@ collections:
   # FAQ
   - name: "faq"
     label: "FAQ"
-    folder: "content/faq"
+    folder: "content/_faq"
     create: true
     slug: "{{slug}}"
     fields:
@@ -110,7 +110,7 @@ collections:
   # Testimonials
   - name: "testimonials"
     label: "Testimonials"
-    folder: "content/testimonials"
+    folder: "content/_testimonials"
     create: true
     slug: "{{slug}}"
     fields:
