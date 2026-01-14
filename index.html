@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SwapBox - Weekly cat litter exchange service. Never scoop again! Fresh litter delivered, used boxes picked up.">
+    <title>SwapBox - Never Scoop Cat Litter Again</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --secondary: #00ACC1;
+            --accent: #FF6F00;
+            --text-dark: #263238;
+            --text-light: #546E7A;
+            --bg-light: #F5F9F7;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M20 50 Q 40 30, 50 50 T 80 50" stroke="rgba(255,255,255,0.1)" fill="none" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 2px solid var(--white);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .cta-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* SwapBox Features */
+        .swapbox-features {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border: 2px solid var(--bg-light);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(46, 125, 50, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-period {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .plan-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .plan-features li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .benefit-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Service Area */
+        .service-area {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .zip-checker {
+            max-width: 500px;
+            margin: 3rem auto;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .zip-checker input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .zip-checker input:focus {
+            border-color: var(--primary);
+        }
+
+        .zip-checker button {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .zip-checker button:hover {
+            background: var(--primary-light);
+        }
+
+        #zipResult {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e8f5e9;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Sign Up */
+        .signup {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .signup-form {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-light);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .zip-checker {
+                flex-direction: column;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🐱 SwapBox</div>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#signup" class="cta-button">Get Started</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Never Scoop Cat Litter Again</h1>
+            <p>Weekly SwapBox delivery with fresh litter boxes and premium litter. We pick up, you relax. Zero effort, zero odor.</p>
+            <div class="hero-buttons">
+                <a href="#signup" class="cta-primary">Start Free Trial</a>
+                <a href="#how-it-works" class="cta-secondary">See How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Simple, hassle-free cat litter service in 4 easy steps</p>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>We Deliver Your SwapBox</h3>
+                    <p>Receive a large, odor-sealing SwapBox containing 7 clean litter boxes with lids and 7 bags of fresh premium litter.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Your Cat Uses It All Week</h3>
+                    <p>Set out one fresh litter box each day. No scooping needed! Just toss the used box in the SwapBox when done.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Leave Outside on Pickup Day</h3>
+                    <p>Get a text reminder. Place your sealed SwapBox outside your door on pickup day or night.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>We Swap With Fresh Box</h3>
+                    <p>We pick up your used SwapBox and leave a fresh one with new litter boxes and litter. Repeat weekly!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SwapBox Features -->
+    <section class="swapbox-features">
+        <div class="container">
+            <h2 class="section-title">The SwapBox</h2>
+            <p class="section-subtitle">Designed for convenience and odor control</p>
+            <div class="feature-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📦</div>
+                    <h3>Large Capacity</h3>
+                    <p>40-gallon Sterilite wheeled industrial tote. Holds a full week's worth of used litter boxes with room to spare.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Odor-Sealing Design</h3>
+                    <p>Tight-sealing lid keeps all odors contained. Your home stays fresh all week long, no smelly garbage bins.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Easy to Use</h3>
+                    <p>Wheeled for easy movement. Simply roll it outside on pickup day. No heavy lifting required.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">♻️</div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Durable, reusable materials. All components are cleaned and sanitized for reuse, reducing waste.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">✨</div>
+                    <h3>Complete System</h3>
+                    <p>Includes 7 disposable litter boxes with lids and 7 bags (8lb each) of premium clumping litter.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Dust-Free Environment</h3>
+                    <p>Pre-filled boxes mean no more pouring litter and creating dust clouds in your home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Choose the plan that fits your household</p>
+            <div class="pricing-cards">
+                <div class="pricing-card fade-in">
+                    <div class="plan-name">Single Cat</div>
+                    <div class="plan-price">$29</div>
+                    <div class="plan-period">per week</div>
+                    <ul class="plan-features">
+                        <li>1 SwapBox delivered weekly</li>
+                        <li>7 litter boxes with lids</li>
+                        <li>7 bags premium litter (8lb each)</li>
+                        <li>Weekly pickup & exchange</li>
+                        <li>Eco-friendly disposal</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="#signup" class="cta-button" style="display: block; text-align: center;">Get Started</a>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="plan-name">Multi-Cat</div>
+                    <div class="plan-price">$49</div>
+                    <div class="plan-period">per week</div>
+                    <ul class="plan-features">
+                        <li>2 SwapBoxes delivered weekly</li>
+                        <li>14 litter boxes with lids</li>
+                        <li>14 bags premium litter (8lb each)</li>
+                        <li>Weekly pickup & exchange</li>
+                        <li>Eco-friendly disposal</li>
+                        <li>Perfect for 2-3 cats</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="#signup" class="cta-button" style="display: block; text-align: center;">Get Started</a>
+                </div>
+                <div class="pricing-card fade-in">
+                    <div class="plan-name">Cat Colony</div>
+                    <div class="plan-price">$69</div>
+                    <div class="plan-period">per week</div>
+                    <ul class="plan-features">
+                        <li>3 SwapBoxes delivered weekly</li>
+                        <li>21 litter boxes with lids</li>
+                        <li>21 bags premium litter (8lb each)</li>
+                        <li>Weekly pickup & exchange</li>
+                        <li>Eco-friendly disposal</li>
+                        <li>Perfect for 4+ cats</li>
+                        <li>Priority support</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="#signup" class="cta-button" style="display: block; text-align: center;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose SwapBox?</h2>
+            <p class="section-subtitle">More than just convenience—it's a lifestyle upgrade</p>
+            <div class="benefits-grid">
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">🏡</div>
+                    <div class="benefit-content">
+                        <h3>Completely Odor-Free Home</h3>
+                        <p>No more litter box smell. No stinky garbage bins. Our sealed SwapBox keeps all odors locked away.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">🧼</div>
+                    <div class="benefit-content">
+                        <h3>No Boxes or Scoopers to Clean</h3>
+                        <p>Never touch a dirty litter box or scooper again. Each box is used once and disposed of properly.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">🛒</div>
+                    <div class="benefit-content">
+                        <h3>No Shopping, No Heavy Bags</h3>
+                        <p>Forget hauling 40lb litter bags from the store. Everything arrives at your doorstep automatically.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">♻️</div>
+                    <div class="benefit-content">
+                        <h3>Eco-Conscious Disposal</h3>
+                        <p>All materials are reusable. We handle disposal responsibly with minimal environmental impact.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">💨</div>
+                    <div class="benefit-content">
+                        <h3>Dust-Free Environment</h3>
+                        <p>Pre-filled boxes eliminate the dust clouds from pouring litter. Better for you and your cat's respiratory health.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">✈️</div>
+                    <div class="benefit-content">
+                        <h3>Perfect for Travel</h3>
+                        <p>Leave your cat(s) alone for several days worry-free. Fresh boxes ready to go means they're always taken care of.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">⚕️</div>
+                    <div class="benefit-content">
+                        <h3>Veterinarian-Approved</h3>
+                        <p>Premium clumping, lightly scented litter recommended by vets for optimal cat health and comfort.</p>
+                    </div>
+                </div>
+                <div class="benefit fade-in">
+                    <div class="benefit-icon">🔄</div>
+                    <div class="benefit-content">
+                        <h3>Flexible Plans</h3>
+                        <p>No long-term contracts. Pause or cancel your service anytime. We make it easy to adjust as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="service-area">
+        <div class="container">
+            <h2 class="section-title">Check Service Availability</h2>
+            <p class="section-subtitle">Enter your zip code to see if we service your area</p>
+            <div class="zip-checker">
+                <input type="text" id="zipInput" placeholder="Enter your zip code" maxlength="5" pattern="[0-9]{5}">
+                <button onclick="checkZip()">Check Availability</button>
+            </div>
+            <div id="zipResult"></div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about SwapBox</p>
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What if I miss pickup day?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Don't worry! We send you a text reminder 1-2 days before pickup. If you miss it, simply contact us and we'll reschedule your pickup for the next available day at no extra charge.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What type of litter is used?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use premium clumping, lightly scented litter that's veterinarian-approved and safe for all cats. It's dust-free, highly absorbent, and excellent at controlling odors.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How big are the SwapBoxes?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each SwapBox is a 40-gallon Sterilite wheeled industrial tote. It's large enough to hold a full week of used litter boxes while remaining easy to move thanks to the sturdy wheels.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What if I have multiple cats?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply add more SwapBoxes to your plan! Each additional SwapBox includes 7 more litter boxes and bags of litter. Most customers with 2-3 cats choose our Multi-Cat plan with 2 SwapBoxes.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Where do I leave the bin?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can leave your SwapBox anywhere outside your house that's easily accessible—your porch, driveway, garage entrance, or side of the house. We'll find it and swap it out!</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What happens to the used litter boxes?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We dispose of all used litter and boxes in an eco-friendly manner. The SwapBox container itself is sanitized, cleaned, and reused to minimize environmental impact.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can I cancel anytime?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! There are no long-term contracts. You can pause or cancel your subscription at any time with no penalties. We make it easy to manage your account online.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How do I use one box per day?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each morning (or your preferred time), simply set out a fresh pre-filled litter box for your cat. At the end of the day or next morning, close the lid on the used box and place it in your SwapBox. It's that simple!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Cat Parents Say</h2>
+            <p class="section-subtitle">Join thousands of happy customers</p>
+            <div class="testimonial-grid">
+                <div class="testimonial fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"This service has been life-changing! I used to dread cleaning the litter box every day. Now I just swap out boxes and my house smells amazing. Best investment for my cats ever!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Cat mom of 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I travel for work and always worried about my cats. With SwapBox, I can leave fresh boxes out for the week and not stress. The service is reliable and professional."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Michael Rodriguez</h4>
+                            <p>Cat dad of 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"My elderly mother couldn't handle heavy litter bags anymore. SwapBox has given her independence back. Easy to use and the pickup is always on time. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EL</div>
+                        <div class="author-info">
+                            <h4>Emily Lopez</h4>
+                            <p>Daughter & caregiver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Three cats meant constant scooping and horrible smells. SwapBox solved everything. The dust-free boxes are amazing for my allergies too. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Kim</h4>
+                            <p>Cat dad of 3</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"As a busy working mom, this service is a godsend. No more emergency store runs for litter. Everything shows up on time and the system just works. My kids even help swap the boxes!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JW</div>
+                        <div class="author-info">
+                            <h4>Jennifer Williams</h4>
+                            <p>Cat mom of 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I was skeptical at first but decided to try it. Now I can't imagine going back. No odor, no mess, no hassle. The SwapBox team is professional and the service is seamless."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TC</div>
+                        <div class="author-info">
+                            <h4>Thomas Chen</h4>
+                            <p>Cat dad of 1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up -->
+    <section class="signup" id="signup">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Ready to Never Scoop Again?</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Start your free trial today. No credit card required for first week.</p>
+            <div class="signup-form">
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="(555) 123-4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Street Address</label>
+                        <input type="text" placeholder="123 Main Street" required>
+                    </div>
+                    <div class="form-group">
+                        <label>City, State, ZIP</label>
+                        <input type="text" placeholder="San Francisco, CA 94102" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Cats</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="1">1 cat</option>
+                            <option value="2">2 cats</option>
+                            <option value="3">3 cats</option>
+                            <option value="4+">4+ cats</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Delivery Day</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                            <option value="sunday">Sunday</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Your Plan</label>
+                        <select required>
+                            <option value="">Select...</option>
+                            <option value="single">Single Cat - $29/week</option>
+                            <option value="multi">Multi-Cat - $49/week</option>
+                            <option value="colony">Cat Colony - $69/week</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-button">Start Free Trial</button>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">
+                        First week free. No credit card required. Cancel anytime.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SwapBox</h3>
+                <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
+                    The easiest way to manage your cat's litter. Never scoop again with our weekly exchange service.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#signup">Sign Up</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Service Areas</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">support@swapbox.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SwapBox. All rights reserved. Made with ❤️ for cat lovers.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll animation trigger
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't already open
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // Zip Code Checker
+        function checkZip() {
+            const zipInput = document.getElementById('zipInput');
+            const zipResult = document.getElementById('zipResult');
+            const zip = zipInput.value.trim();
+            
+            if (zip.length !== 5 || !/^\d{5}$/.test(zip)) {
+                zipResult.innerHTML = '<p style="color: #d32f2f;">Please enter a valid 5-digit zip code</p>';
+                return;
+            }
+            
+            // Simulated service area check
+            // In production, this would call your backend API
+            const serviceZips = ['94102', '94103', '94104', '10001', '10002', '90001', '90002'];
+            
+            if (serviceZips.includes(zip)) {
+                zipResult.innerHTML = '<p style="color: #2E7D32; font-weight: 600;">✓ Great news! We service your area. <a href="#signup" style="color: #2E7D32; text-decoration: underline;">Sign up now</a></p>';
+            } else {
+                zipResult.innerHTML = '<p style="color: #F57C00;">We\'re not in your area yet, but we\'re expanding! <a href="#signup" style="color: #F57C00; text-decoration: underline;">Join our waitlist</a></p>';
+            }
+        }
+
+        // Allow Enter key in zip input
+        document.getElementById('zipInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                checkZip();
+            }
+        });
+
+        // Form Submission Handler
+        function handleSignup(event) {
+            event.preventDefault();
+            alert('Thank you for your interest! In production, this would process your signup. For now, this is a demo.');
+            // In production, send data to your backend
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.right = '20px';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '1rem';
+                navLinks.style.borderRadius = '10px';
+                navLinks.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            }
+        }
+
+        // Sticky Header Effect
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
