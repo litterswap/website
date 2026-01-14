@@ -47,8 +47,13 @@ exclude:
   - NETLIFY-BUILD-FIX.md
   - ADMIN-SETUP-GITHUB.md
   - GITHUB-BACKEND-UPDATE.md
+  - GITHUB-OAUTH-APP-SETUP.md
+  - OAUTH-FIX-FINAL.md
+  - ADMIN-BLANK-FIX.md
+  - CURRENT-STATUS.md
   - STATUS-FINAL.md
   - FIX-SUMMARY.md
   - RUN-ME-FIRST.txt
   - sync-data.sh
-  - "*.md"
+  - convert-to-yaml.py
+  - serve.sh
