@@ -1,0 +1,151 @@
+# Save as: admin/config.yml
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Optional: Enable local development
+local_backend: true
+
+# Media files will be stored in the repo under images/uploads
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Publish mode - editorial workflow gives you draft/review/publish stages
+publish_mode: editorial_workflow
+
+collections:
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "content/settings/general.json"
+        fields:
+          - {label: "Site Title", name: "site_title", widget: "string", default: "SwapBox"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false}
+          - {label: "Twitter URL", name: "twitter", widget: "string", required: false}
+
+  # Hero Section
+  - name: "hero"
+    label: "Hero Section"
+    files:
+      - name: "hero-content"
+        label: "Hero Content"
+        file: "content/hero.json"
+        fields:
+          - {label: "Main Headline", name: "headline", widget: "string"}
+          - {label: "Subheadline", name: "subheadline", widget: "text"}
+          - {label: "Primary Button Text", name: "primary_cta", widget: "string"}
+          - {label: "Secondary Button Text", name: "secondary_cta", widget: "string"}
+          - {label: "Hero Image", name: "image", widget: "image", required: false}
+
+  # How It Works Steps
+  - name: "steps"
+    label: "How It Works Steps"
+    folder: "content/steps"
+    create: true
+    slug: "step-{{step_number}}"
+    fields:
+      - {label: "Step Number", name: "step_number", widget: "number", min: 1, max: 10}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icon", name: "icon", widget: "string", hint: "Emoji or icon code"}
+
+  # SwapBox Features
+  - name: "features"
+    label: "SwapBox Features"
+    folder: "content/features"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Feature Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icon", name: "icon", widget: "string", hint: "Emoji or icon code"}
+      - {label: "Display Order", name: "order", widget: "number", default: 1}
+
+  # Pricing Plans
+  - name: "pricing"
+    label: "Pricing Plans"
+    folder: "content/pricing"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Plan Name", name: "name", widget: "string"}
+      - {label: "Price", name: "price", widget: "number"}
+      - {label: "Period", name: "period", widget: "string", default: "per week"}
+      - {label: "Featured Plan", name: "featured", widget: "boolean", default: false}
+      - {label: "Badge Text", name: "badge", widget: "string", required: false, hint: "e.g., Most Popular"}
+      - {label: "Features List", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+      - {label: "Display Order", name: "order", widget: "number", default: 1}
+
+  # Benefits (Why Choose Us)
+  - name: "benefits"
+    label: "Why Choose Us"
+    folder: "content/benefits"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Benefit Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icon", name: "icon", widget: "string", hint: "Emoji or icon code"}
+      - {label: "Display Order", name: "order", widget: "number", default: 1}
+
+  # FAQ
+  - name: "faq"
+    label: "FAQ"
+    folder: "content/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Question", name: "question", widget: "string"}
+      - {label: "Answer", name: "answer", widget: "text"}
+      - {label: "Display Order", name: "order", widget: "number", default: 1}
+
+  # Testimonials
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Customer Name", name: "name", widget: "string"}
+      - {label: "Role/Description", name: "role", widget: "string", hint: "e.g., Cat mom of 2"}
+      - {label: "Testimonial Text", name: "text", widget: "text"}
+      - {label: "Rating", name: "rating", widget: "number", min: 1, max: 5, default: 5}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "Initials", name: "initials", widget: "string", hint: "For avatar if no photo"}
+      - {label: "Display Order", name: "order", widget: "number", default: 1}
+
+  # Service Areas
+  - name: "service_areas"
+    label: "Service Areas"
+    files:
+      - name: "zip_codes"
+        label: "Service Zip Codes"
+        file: "content/service-areas.json"
+        fields:
+          - label: "Zip Codes"
+            name: "zip_codes"
+            widget: "list"
+            field: {label: "Zip Code", name: "zip", widget: "string"}
+
+  # Sign Up Form Settings
+  - name: "signup"
+    label: "Sign Up Form"
+    files:
+      - name: "form-settings"
+        label: "Form Settings"
+        file: "content/signup-form.json"
+        fields:
+          - {label: "Form Title", name: "title", widget: "string"}
+          - {label: "Form Subtitle", name: "subtitle", widget: "string"}
+          - {label: "Submit Button Text", name: "button_text", widget: "string"}
+          - {label: "Success Message", name: "success_message", widget: "text"}
+          - {label: "Form Action URL", name: "action_url", widget: "string", hint: "Where form data is sent"}
+          - {label: "Show Free Trial Message", name: "show_trial", widget: "boolean", default: true}
