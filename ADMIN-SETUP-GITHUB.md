@@ -16,7 +16,7 @@ Since Netlify Identity is deprecated in favor of Auth0, we've switched to the **
 
 1. **Go to Netlify Dashboard**
    - https://app.netlify.com
-   - Select your SwapBox site
+   - Select your DeLitterUp site
 
 2. **Navigate to Site Settings**
    - Click "Site settings"

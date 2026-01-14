@@ -5,7 +5,7 @@ period: "per week"
 featured: true
 badge: "Most Popular"
 features:
-  - "1 SwapBox delivered weekly"
+  - "1 DeLitterUp delivered weekly"
   - "14 disposable litter boxes with lids"
   - "14 bags (8lb each) of premium litter"
   - "Weekly pickup & disposal"

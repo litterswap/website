@@ -1,4 +1,4 @@
-# SwapBox Website
+# DeLitterUp Website
 
 A Jekyll-powered website with Netlify CMS for easy content management.
 
@@ -89,7 +89,7 @@ They can visit `https://your-site.netlify.app/admin` and log in to edit all cont
 All content is stored in `/content/` as JSON files:
 
 - `/content/_steps/` - How It Works steps
-- `/content/_features/` - SwapBox features
+- `/content/_features/` - DeLitterUp features
 - `/content/_pricing/` - Pricing plans
 - `/content/_benefits/` - Why Choose Us benefits
 - `/content/_faq/` - FAQ items

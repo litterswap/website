@@ -1,6 +1,6 @@
-# 🐱 SwapBox - Cat Litter Exchange Service Website
+# 🐱 DeLitterUp - Cat Litter Exchange Service Website
 
-A modern, professional website for SwapBox - a weekly cat litter exchange service. Built with vanilla HTML, CSS, and JavaScript, optimized for GitHub Pages deployment.
+A modern, professional website for DeLitterUp - a weekly cat litter exchange service. Built with vanilla HTML, CSS, and JavaScript, optimized for GitHub Pages deployment.
 
 ## 🌟 Features
 
@@ -17,7 +17,7 @@ A modern, professional website for SwapBox - a weekly cat litter exchange servic
 
 1. **Create a new repository on GitHub**
    - Go to https://github.com/new
-   - Name it `swapbox-website` (or any name you prefer)
+   - Name it `delitterup-website` (or any name you prefer)
    - Make it public
    - Don't initialize with README (we have one)
 
@@ -33,15 +33,15 @@ A modern, professional website for SwapBox - a weekly cat litter exchange servic
    - Click Save
 
 4. **Your site is live!**
-   - URL will be: `https://yourusername.github.io/swapbox-website`
+   - URL will be: `https://yourusername.github.io/delitterup-website`
    - May take 1-2 minutes to deploy
 
 ### Option 2: Using Git Command Line
 
 ```bash
 # Clone or create new repository
-git clone https://github.com/yourusername/swapbox-website.git
-cd swapbox-website
+git clone https://github.com/yourusername/delitterup-website.git
+cd delitterup-website
 
 # Add the files
 cp /path/to/index.html .
@@ -49,7 +49,7 @@ cp /path/to/README.md .
 
 # Commit and push
 git add .
-git commit -m "Initial commit - SwapBox website"
+git commit -m "Initial commit - DeLitterUp website"
 git push origin main
 
 # Enable GitHub Pages in repository settings
@@ -58,11 +58,11 @@ git push origin main
 ## 📁 File Structure
 
 ```
-swapbox-website/
+delitterup-website/
 ├── index.html          # Main website file (all-in-one)
 ├── README.md          # This file
 └── (optional folders)
-    ├── images/        # Add your SwapBox images here
+    ├── images/        # Add your DeLitterUp images here
     ├── assets/        # Additional assets
     └── CNAME          # For custom domain
 ```
@@ -88,22 +88,22 @@ Replace the emoji logo in the header:
 
 ```html
 <!-- Find this line -->
-<div class="logo">🐱 SwapBox</div>
+<div class="logo">🐱 DeLitterUp</div>
 
 <!-- Replace with -->
 <div class="logo">
-    <img src="images/logo.png" alt="SwapBox" style="height: 40px;">
+    <img src="images/logo.png" alt="DeLitterUp" style="height: 40px;">
 </div>
 ```
 
 ### 3. Add Real Images
 
-Create an `images` folder and add SwapBox photos:
+Create an `images` folder and add DeLitterUp photos:
 
 ```html
 <!-- In the hero section, add -->
 <div class="hero-image">
-    <img src="images/swapbox-hero.jpg" alt="SwapBox System">
+    <img src="images/delitterup-hero.jpg" alt="DeLitterUp System">
 </div>
 ```
 
@@ -163,10 +163,10 @@ Add before closing `</head>` tag:
 
 ### Custom Domain
 
-1. Buy a domain (e.g., `swapbox.com`)
+1. Buy a domain (e.g., `delitterup.com`)
 2. Create a `CNAME` file in repository root:
    ```
-   swapbox.com
+   delitterup.com
    ```
 3. Add DNS records at your domain registrar:
    - Type: `A` → Value: `185.199.108.153`
@@ -248,9 +248,9 @@ Create a `favicon.ico` and add to `<head>`:
 ### Improve Meta Tags
 
 ```html
-<meta name="description" content="SwapBox - Weekly cat litter exchange service. Never scoop again! Fresh litter delivered, used boxes picked up.">
+<meta name="description" content="DeLitterUp - Weekly cat litter exchange service. Never scoop again! Fresh litter delivered, used boxes picked up.">
 <meta name="keywords" content="cat litter, litter box service, pet care, cat care">
-<meta property="og:title" content="SwapBox - Never Scoop Cat Litter Again">
+<meta property="og:title" content="DeLitterUp - Never Scoop Cat Litter Again">
 <meta property="og:description" content="Weekly cat litter exchange service. Fresh litter delivered to your door.">
 <meta property="og:image" content="https://yoursite.com/images/og-image.jpg">
 <meta property="og:url" content="https://yoursite.com">
@@ -405,7 +405,7 @@ For production, minify HTML/CSS/JS:
 
 ## 📄 License
 
-This template is free to use for your SwapBox business. No attribution required.
+This template is free to use for your DeLitterUp business. No attribution required.
 
 ## 🤝 Contributing
 
@@ -420,6 +420,6 @@ If you need help with deployment or customization, feel free to open an issue on
 
 ---
 
-**Built with ❤️ for SwapBox**
+**Built with ❤️ for DeLitterUp**
 
 Ready to launch your cat litter revolution! 🚀🐱

@@ -1,8 +1,8 @@
-# SwapBox Website - Quick Start Guide
+# DeLitterUp Website - Quick Start Guide
 
 ## ✅ Migration Complete!
 
-Your SwapBox website has been successfully converted to Jekyll with Netlify CMS integration.
+Your DeLitterUp website has been successfully converted to Jekyll with Netlify CMS integration.
 
 ## 🚀 Running Locally
 
@@ -35,7 +35,7 @@ website/
 ├── index.html            # Homepage (with Jekyll/Liquid tags)
 ├── content/              # All editable content (JSON files)
 │   ├── _steps/           # "How It Works" steps
-│   ├── _features/        # SwapBox features
+│   ├── _features/        # DeLitterUp features
 │   ├── _pricing/         # Pricing plans
 │   ├── _benefits/        # "Why Choose Us" benefits
 │   ├── _faq/             # FAQ items
@@ -232,9 +232,9 @@ Edit `content/_data/settings/general.json`:
 
 ```json
 {
-  "site_title": "SwapBox",
+  "site_title": "DeLitterUp",
   "phone": "(555) 123-4567",
-  "email": "hello@swapbox.com"
+  "email": "hello@delitterup.com"
 }
 ```
 

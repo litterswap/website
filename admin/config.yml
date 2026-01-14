@@ -23,7 +23,7 @@ collections:
         label: "General Settings"
         file: "_data/settings/general.json"
         fields:
-          - {label: "Site Title", name: "site_title", widget: "string", default: "SwapBox"}
+          - {label: "Site Title", name: "site_title", widget: "string", default: "DeLitterUp"}
           - {label: "Tagline", name: "tagline", widget: "string"}
           - {label: "Phone", name: "phone", widget: "string"}
           - {label: "Email", name: "email", widget: "string"}
@@ -59,9 +59,9 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Icon", name: "icon", widget: "string", hint: "Emoji or icon code"}
 
-  # SwapBox Features
+  # DeLitterUp Features
   - name: "features"
-    label: "SwapBox Features"
+    label: "DeLitterUp Features"
     folder: "_features"
     create: true
     slug: "{{slug}}"

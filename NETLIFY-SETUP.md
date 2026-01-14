@@ -16,7 +16,7 @@ The admin portal shows nothing because **Netlify Identity is not enabled yet**. 
 
 1. **Go to your Netlify site dashboard**
    - URL: https://app.netlify.com
-   - Select your SwapBox site
+   - Select your DeLitterUp site
 
 2. **Enable Identity**
    - Click "Identity" in the top navigation
@@ -42,7 +42,7 @@ This allows the CMS to save changes back to GitHub:
 ### 3. Update Site URL in Config
 
 1. **Find your Netlify site URL**
-   - It will be something like: `https://swapbox-xyz123.netlify.app`
+   - It will be something like: `https://delitterup-xyz123.netlify.app`
    - Or your custom domain if you set one up
 
 2. **You're done!** The config files are already set up correctly.

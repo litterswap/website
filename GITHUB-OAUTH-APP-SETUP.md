@@ -19,7 +19,7 @@ This means GitHub doesn't have an OAuth application registered for your CMS.
 
    **Application name:**
    ```
-   SwapBox CMS
+   DeLitterUp CMS
    ```
 
    **Homepage URL:**
@@ -29,7 +29,7 @@ This means GitHub doesn't have an OAuth application registered for your CMS.
 
    **Application description:** (optional)
    ```
-   Content management system for SwapBox website
+   Content management system for DeLitterUp website
    ```
 
    **Authorization callback URL:** (IMPORTANT - must be exact!)
@@ -104,7 +104,7 @@ Let me update this file for you...
    ↓
 3. Netlify proxies to: github.com/login/oauth/authorize?client_id=YOUR_ID
    ↓
-4. You see: "Authorize SwapBox CMS"
+4. You see: "Authorize DeLitterUp CMS"
    ↓
 5. Click "Authorize"
    ↓
@@ -170,7 +170,7 @@ Make sure these are EXACT:
 If you used a different callback URL when creating the OAuth app:
 
 1. Go back to https://github.com/settings/developers
-2. Click your "SwapBox CMS" app
+2. Click your "DeLitterUp CMS" app
 3. Change "Authorization callback URL" to: `https://api.netlify.com/auth/done`
 4. Click "Update application"
 5. Test again

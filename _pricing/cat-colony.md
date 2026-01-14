@@ -4,7 +4,7 @@ price: 65
 period: "per week"
 featured: false
 features:
-  - "2 SwapBoxes delivered weekly"
+  - "2 DeLitterUps delivered weekly"
   - "21+ disposable litter boxes"
   - "21+ bags of premium litter"
   - "Weekly pickup & disposal"

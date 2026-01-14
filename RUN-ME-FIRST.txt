@@ -1,6 +1,6 @@
 ╔════════════════════════════════════════════════════════════╗
 ║                                                            ║
-║   🎉 SWAPBOX JEKYLL MIGRATION COMPLETE! 🎉                ║
+║   🎉 DELITTERUP JEKYLL MIGRATION COMPLETE! 🎉                ║
 ║                                                            ║
 ║   Your website is ready to run locally and deploy!        ║
 ║                                                            ║
@@ -70,7 +70,7 @@
 
 ✓ Hero section text
 ✓ How It Works steps
-✓ SwapBox features
+✓ DeLitterUp features
 ✓ Pricing plans (add/edit/delete)
 ✓ Why Choose Us benefits
 ✓ FAQ items (add/edit/delete)

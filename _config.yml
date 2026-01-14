@@ -1,6 +1,6 @@
-# SwapBox Jekyll Configuration
-title: SwapBox
-description: Never Scoop Cat Litter Again - Weekly SwapBox delivery service
+# DeLitterUp Jekyll Configuration
+title: DeLitterUp
+description: Never Scoop Cat Litter Again - Weekly DeLitterUp delivery service
 baseurl: "" # Leave empty for GitHub Pages on username.github.io/repo
 url: "https://litterswap.github.io" # Change to your GitHub Pages URL
 

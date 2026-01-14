@@ -1,4 +1,4 @@
-# Netlify Build Configuration for SwapBox Jekyll Site
+# Netlify Build Configuration for DeLitterUp Jekyll Site
 
 [build]
   # Build command - tells Netlify how to build your Jekyll site

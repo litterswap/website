@@ -1,4 +1,4 @@
-// SwapBox Website JavaScript
+// DeLitterUp Website JavaScript
 
 // Sticky header on scroll
 window.addEventListener('scroll', () => {
@@ -118,5 +118,5 @@ function handleSignup(event) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('SwapBox website loaded successfully!');
+    console.log('DeLitterUp website loaded successfully!');
 });

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SwapBox Website - Jekyll Migration Script
+DeLitterUp Website - Jekyll Migration Script
 This script creates all necessary Jekyll files and populates content collections
 """
 
@@ -30,9 +30,9 @@ def write_json(path, data):
 
 def create_config_yml():
     """Create Jekyll _config.yml"""
-    config = """# SwapBox Jekyll Configuration
-title: SwapBox
-description: Never Scoop Cat Litter Again - Weekly SwapBox delivery service
+    config = """# DeLitterUp Jekyll Configuration
+title: DeLitterUp
+description: Never Scoop Cat Litter Again - Weekly DeLitterUp delivery service
 baseurl: "" # Leave empty for GitHub Pages on username.github.io/repo
 url: "https://litterswap.github.io" # Change to your GitHub Pages URL
 
@@ -131,7 +131,7 @@ def create_css():
     """Create CSS file"""
     create_directory(BASE_DIR / 'assets' / 'css')
 
-    css = """/* SwapBox Website Styles */
+    css = """/* DeLitterUp Website Styles */
 :root {
     --primary: #10B981;
     --primary-dark: #059669;
@@ -789,7 +789,7 @@ def create_js():
     """Create JavaScript file"""
     create_directory(BASE_DIR / 'assets' / 'js')
 
-    js = """// SwapBox Website JavaScript
+    js = """// DeLitterUp Website JavaScript
 
 // Sticky header on scroll
 window.addEventListener('scroll', () => {
@@ -909,7 +909,7 @@ function handleSignup(event) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('SwapBox website loaded successfully!');
+    console.log('DeLitterUp website loaded successfully!');
 });
 """
     write_file(BASE_DIR / 'assets' / 'js' / 'main.js', js)
@@ -928,7 +928,7 @@ def create_sample_content():
     # Hero content
     hero_data = {
         "headline": "Never Scoop Cat Litter Again",
-        "subheadline": "Weekly SwapBox delivery with fresh litter boxes and premium litter. We pick up, you relax. Zero effort, zero odor.",
+        "subheadline": "Weekly DeLitterUp delivery with fresh litter boxes and premium litter. We pick up, you relax. Zero effort, zero odor.",
         "primary_cta": "Start Free Trial",
         "secondary_cta": "See How It Works"
     }
@@ -938,25 +938,25 @@ def create_sample_content():
     steps = [
         {
             "step_number": 1,
-            "title": "We Deliver Your SwapBox",
-            "description": "Receive your first SwapBox with 7 clean litter boxes and 7 bags of fresh, premium litter.",
+            "title": "We Deliver Your DeLitterUp",
+            "description": "Receive your first DeLitterUp with 7 clean litter boxes and 7 bags of fresh, premium litter.",
             "icon": "📦"
         },
         {
             "step_number": 2,
             "title": "Your Cat Uses Fresh Litter Daily",
-            "description": "Simply swap out the litter box each day. Drop the used one back in the SwapBox—no scooping needed!",
+            "description": "Simply swap out the litter box each day. Drop the used one back in the DeLitterUp—no scooping needed!",
             "icon": "🐱"
         },
         {
             "step_number": 3,
             "title": "Leave It Outside on Pickup Day",
-            "description": "Get a text reminder 1-2 days before. Just leave your SwapBox outside—we'll grab it, no need to be home.",
+            "description": "Get a text reminder 1-2 days before. Just leave your DeLitterUp outside—we'll grab it, no need to be home.",
             "icon": "🚪"
         },
         {
             "step_number": 4,
-            "title": "We Swap with a Fresh SwapBox",
+            "title": "We Swap with a Fresh DeLitterUp",
             "description": "We take the old, leave the new. Repeat weekly. It's that simple!",
             "icon": "🔄"
         }
@@ -1006,7 +1006,7 @@ def create_sample_content():
             "period": "per week",
             "featured": False,
             "features": [
-                "1 SwapBox delivered weekly",
+                "1 DeLitterUp delivered weekly",
                 "7 disposable litter boxes with lids",
                 "7 bags (8lb each) of premium litter",
                 "Weekly pickup & disposal",
@@ -1022,7 +1022,7 @@ def create_sample_content():
             "featured": True,
             "badge": "Most Popular",
             "features": [
-                "1 SwapBox delivered weekly",
+                "1 DeLitterUp delivered weekly",
                 "14 disposable litter boxes with lids",
                 "14 bags (8lb each) of premium litter",
                 "Weekly pickup & disposal",
@@ -1038,7 +1038,7 @@ def create_sample_content():
             "period": "per week",
             "featured": False,
             "features": [
-                "2 SwapBoxes delivered weekly",
+                "2 DeLitterUpes delivered weekly",
                 "21+ disposable litter boxes",
                 "21+ bags of premium litter",
                 "Weekly pickup & disposal",
@@ -1112,13 +1112,13 @@ def create_sample_content():
             "order": 2
         },
         {
-            "question": "How big are the SwapBoxes?",
+            "question": "How big are the DeLitterUpes?",
             "answer": "We use Sterilite 40-gallon wheeled industrial totes. They're approximately 32\" long x 19\" wide x 17\" tall—plenty of room for a week's worth of litter boxes.",
             "order": 3
         },
         {
             "question": "What if I have multiple cats?",
-            "answer": "Simply upgrade to our Multi-Cat plan or add additional SwapBoxes. Each box contains enough for 7 daily litter changes.",
+            "answer": "Simply upgrade to our Multi-Cat plan or add additional DeLitterUpes. Each box contains enough for 7 daily litter changes.",
             "order": 4
         },
         {
@@ -1133,12 +1133,12 @@ def create_sample_content():
         },
         {
             "question": "What happens to the used litter?",
-            "answer": "We dispose of it responsibly at licensed facilities. All our SwapBoxes and litter boxes are reused to minimize environmental impact.",
+            "answer": "We dispose of it responsibly at licensed facilities. All our DeLitterUpes and litter boxes are reused to minimize environmental impact.",
             "order": 7
         },
         {
             "question": "Do I need to be home for pickup/delivery?",
-            "answer": "Nope! That's the beauty of SwapBox. Just leave your full box outside and we'll swap it with a fresh one. You don't need to be home at all.",
+            "answer": "Nope! That's the beauty of DeLitterUp. Just leave your full box outside and we'll swap it with a fresh one. You don't need to be home at all.",
             "order": 8
         }
     ]
@@ -1152,7 +1152,7 @@ def create_sample_content():
         {
             "name": "Sarah Johnson",
             "role": "Cat mom of 2",
-            "text": "SwapBox has been a game changer! I used to dread cleaning litter boxes every day. Now I just swap them out and forget about it. My house smells fresh and I have so much more free time.",
+            "text": "DeLitterUp has been a game changer! I used to dread cleaning litter boxes every day. Now I just swap them out and forget about it. My house smells fresh and I have so much more free time.",
             "rating": 5,
             "initials": "SJ",
             "order": 1
@@ -1160,7 +1160,7 @@ def create_sample_content():
         {
             "name": "Michael Chen",
             "role": "Busy professional with 3 cats",
-            "text": "As someone who travels for work, SwapBox is perfect. I can leave for a week knowing my cats have fresh litter every day. No more expensive pet sitters just for litter box duty!",
+            "text": "As someone who travels for work, DeLitterUp is perfect. I can leave for a week knowing my cats have fresh litter every day. No more expensive pet sitters just for litter box duty!",
             "rating": 5,
             "initials": "MC",
             "order": 2
@@ -1168,7 +1168,7 @@ def create_sample_content():
         {
             "name": "Emily Rodriguez",
             "role": "Senior cat owner",
-            "text": "I'm 72 and lifting heavy litter bags was getting difficult. SwapBox delivers everything and takes it all away. It's given me independence and kept my home odor-free. Highly recommend!",
+            "text": "I'm 72 and lifting heavy litter bags was getting difficult. DeLitterUp delivers everything and takes it all away. It's given me independence and kept my home odor-free. Highly recommend!",
             "rating": 5,
             "initials": "ER",
             "order": 3
@@ -1209,13 +1209,13 @@ def create_sample_content():
 
     # General settings
     settings = {
-        "site_title": "SwapBox",
+        "site_title": "DeLitterUp",
         "tagline": "The easiest way to manage your cat's litter. Never scoop again with our weekly exchange service.",
         "phone": "(555) 123-4567",
-        "email": "hello@swapbox.com",
-        "facebook": "https://facebook.com/swapbox",
-        "instagram": "https://instagram.com/swapbox",
-        "twitter": "https://twitter.com/swapbox"
+        "email": "hello@delitterup.com",
+        "facebook": "https://facebook.com/delitterup",
+        "instagram": "https://instagram.com/delitterup",
+        "twitter": "https://twitter.com/delitterup"
     }
     write_json(BASE_DIR / 'content' / '_data' / 'settings' / 'general.json', settings)
 
@@ -1263,7 +1263,7 @@ def create_data_symlinks():
 
 def create_readme():
     """Create an updated README"""
-    readme = """# SwapBox Website
+    readme = """# DeLitterUp Website
 
 A Jekyll-powered website with Netlify CMS for easy content management.
 
@@ -1354,7 +1354,7 @@ They can visit `https://your-site.netlify.app/admin` and log in to edit all cont
 All content is stored in `/content/` as JSON files:
 
 - `/content/_steps/` - How It Works steps
-- `/content/_features/` - SwapBox features
+- `/content/_features/` - DeLitterUp features
 - `/content/_pricing/` - Pricing plans
 - `/content/_benefits/` - Why Choose Us benefits
 - `/content/_faq/` - FAQ items
@@ -1420,7 +1420,7 @@ Made with ❤️ for cat lovers
 
 def main():
     """Main migration function"""
-    print("\n🚀 Starting Jekyll Migration for SwapBox Website\n")
+    print("\n🚀 Starting Jekyll Migration for DeLitterUp Website\n")
     print("=" * 60)
 
     print("\n📝 Creating Jekyll Configuration...")

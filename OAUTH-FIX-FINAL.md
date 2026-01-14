@@ -134,7 +134,7 @@ If Netlify OAuth continues to have issues, you can use GitHub's OAuth directly.
    - Click "OAuth Apps" → "New OAuth App"
 
 2. **Fill in Details:**
-   - Application name: `SwapBox CMS`
+   - Application name: `DeLitterUp CMS`
    - Homepage URL: `https://delitterup.netlify.app`
    - Authorization callback URL: `https://delitterup.netlify.app/admin/`
 
@@ -220,7 +220,7 @@ When clicking "Login with GitHub":
 1. Click "Login with GitHub" button
 2. Brief redirect/loading
 3. Taken to GitHub authorization page
-4. See: "Authorize SwapBox CMS" or similar
+4. See: "Authorize DeLitterUp CMS" or similar
 5. Click "Authorize"
 6. Redirected back to admin page
 7. CMS loads with collections visible

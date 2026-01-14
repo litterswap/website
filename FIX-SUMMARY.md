@@ -36,7 +36,7 @@
 
 1. **Go to Netlify Dashboard**
    - https://app.netlify.com
-   - Select your SwapBox site
+   - Select your DeLitterUp site
 
 2. **Enable Identity** (2 clicks)
    - Click "Identity" tab

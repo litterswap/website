@@ -1,12 +1,12 @@
 ---
 layout: default
-title: SwapBox - Never Scoop Cat Litter Again
+title: DeLitterUp - Never Scoop Cat Litter Again
 ---
 
 <!-- Header -->
 <header>
     <nav>
-        <div class="logo">🐱 SwapBox</div>
+        <div class="logo">🐱 DeLitterUp</div>
         <ul class="nav-links">
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#pricing">Pricing</a></li>
@@ -26,7 +26,7 @@ title: SwapBox - Never Scoop Cat Litter Again
 <section class="hero">
     <div class="hero-content">
         <h1>{{ hero.headline | default: "Never Scoop Cat Litter Again" }}</h1>
-        <p>{{ hero.subheadline | default: "Weekly SwapBox delivery with fresh litter boxes and premium litter. We pick up, you relax. Zero effort, zero odor." }}</p>
+        <p>{{ hero.subheadline | default: "Weekly DeLitterUp delivery with fresh litter boxes and premium litter. We pick up, you relax. Zero effort, zero odor." }}</p>
         <div class="hero-buttons">
             <a href="#signup" class="cta-primary">{{ hero.primary_cta | default: "Start Free Trial" }}</a>
             <a href="#how-it-works" class="cta-secondary">{{ hero.secondary_cta | default: "See How It Works" }}</a>
@@ -52,10 +52,10 @@ title: SwapBox - Never Scoop Cat Litter Again
     </div>
 </section>
 
-<!-- SwapBox Features -->
-<section class="swapbox-features">
+<!-- DeLitterUp Features -->
+<section class="delitterup-features">
     <div class="container">
-        <h2 class="section-title">The SwapBox</h2>
+        <h2 class="section-title">The DeLitterUp</h2>
         <p class="section-subtitle">Designed for convenience and odor control</p>
         <div class="feature-grid">
             {% assign features = site.features | sort: 'order' %}
@@ -100,7 +100,7 @@ title: SwapBox - Never Scoop Cat Litter Again
 <!-- Why Choose Us -->
 <section class="why-choose">
     <div class="container">
-        <h2 class="section-title">Why Choose SwapBox?</h2>
+        <h2 class="section-title">Why Choose DeLitterUp?</h2>
         <p class="section-subtitle">More than just convenience—it's a lifestyle upgrade</p>
         <div class="benefits-grid">
             {% assign benefits = site.benefits | sort: 'order' %}
@@ -134,7 +134,7 @@ title: SwapBox - Never Scoop Cat Litter Again
 <section class="faq" id="faq">
     <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Everything you need to know about SwapBox</p>
+        <p class="section-subtitle">Everything you need to know about DeLitterUp</p>
         <div class="faq-list">
             {% assign faqs = site.faq | sort: 'order' %}
             {% for item in faqs %}
@@ -258,7 +258,7 @@ title: SwapBox - Never Scoop Cat Litter Again
 <footer>
     <div class="footer-content">
         <div class="footer-section">
-            <h3>{{ settings.site_title | default: "SwapBox" }}</h3>
+            <h3>{{ settings.site_title | default: "DeLitterUp" }}</h3>
             <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
                 {{ settings.tagline | default: "The easiest way to manage your cat's litter. Never scoop again with our weekly exchange service." }}
             </p>
@@ -292,6 +292,6 @@ title: SwapBox - Never Scoop Cat Litter Again
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 {{ settings.site_title | default: "SwapBox" }}. All rights reserved. Made with ❤️ for cat lovers.</p>
+        <p>&copy; 2026 {{ settings.site_title | default: "DeLitterUp" }}. All rights reserved. Made with ❤️ for cat lovers.</p>
     </div>
 </footer>

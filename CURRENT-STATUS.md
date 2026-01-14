@@ -25,7 +25,7 @@
 
 **Symptoms:**
 - "How It Works" section is empty (should show 4 steps)
-- "SwapBox Features" section is empty (should show 4 features)
+- "DeLitterUp Features" section is empty (should show 4 features)
 - "Pricing" section is empty (should show 3 plans)
 - "FAQ" section is empty (should show 8 questions)
 - "Testimonials" section is empty (should show 3 reviews)
@@ -147,8 +147,8 @@ website/
 ```yaml
 ---
 step_number: 1
-title: "We Deliver Your SwapBox"
-description: "Receive your first SwapBox with 7 clean litter boxes..."
+title: "We Deliver Your DeLitterUp"
+description: "Receive your first DeLitterUp with 7 clean litter boxes..."
 icon: "📦"
 ---
 ```
