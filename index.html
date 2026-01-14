@@ -1371,5 +1371,31 @@
         });
       }
     </script>
+    <script>
+    // Load hero content from CMS
+    fetch('/content/hero.json')
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector('.hero h1').textContent = data.headline;
+        document.querySelector('.hero p').textContent = data.subheadline;
+      });
+    
+    // Load testimonials from CMS
+    fetch('/content/testimonials/')
+      .then(response => response.json())
+      .then(files => {
+        // Load each testimonial file and display
+        files.forEach(file => {
+          fetch(`/content/testimonials/${file}`)
+            .then(response => response.json())
+            .then(testimonial => {
+              // Create testimonial HTML and add to page
+              // (You can customize this based on your needs)
+            });
+        });
+      });
+    
+    // Similar for FAQ, pricing, etc.
+    </script>
 </body>
 </html>
