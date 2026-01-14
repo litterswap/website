@@ -21,7 +21,7 @@ collections:
     files:
       - name: "general"
         label: "General Settings"
-        file: "content/_data/settings/general.json"
+        file: "_data/settings/general.json"
         fields:
           - {label: "Site Title", name: "site_title", widget: "string", default: "SwapBox"}
           - {label: "Tagline", name: "tagline", widget: "string"}
@@ -37,7 +37,7 @@ collections:
     files:
       - name: "hero-content"
         label: "Hero Content"
-        file: "content/hero.json"
+        file: "_data/hero.json"
         fields:
           - {label: "Main Headline", name: "headline", widget: "string"}
           - {label: "Subheadline", name: "subheadline", widget: "text"}
@@ -141,7 +141,7 @@ collections:
     files:
       - name: "form-settings"
         label: "Form Settings"
-        file: "content/signup-form.json"
+        file: "_data/signup-form.json"
         fields:
           - {label: "Form Title", name: "title", widget: "string"}
           - {label: "Form Subtitle", name: "subtitle", widget: "string"}
