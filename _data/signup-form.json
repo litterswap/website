@@ -1,1 +1,8 @@
-/Users/jfriese/Downloads/website/content/signup-form.json
+{
+  "title": "Ready to Never Scoop Again?",
+  "subtitle": "Start your free trial today. No credit card required for first week.",
+  "button_text": "Start Free Trial",
+  "success_message": "Thank you for signing up! We'll contact you within 24 hours to schedule your first delivery.",
+  "action_url": "",
+  "show_trial": true
+}

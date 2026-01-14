@@ -1,1 +1,9 @@
-/Users/jfriese/Downloads/website/content/_data/settings/general.json
+{
+  "site_title": "SwapBox",
+  "tagline": "The easiest way to manage your cat's litter. Never scoop again with our weekly exchange service.",
+  "phone": "(555) 123-4567",
+  "email": "hello@swapbox.com",
+  "facebook": "https://facebook.com/swapbox",
+  "instagram": "https://instagram.com/swapbox",
+  "twitter": "https://twitter.com/swapbox"
+}
