@@ -48,7 +48,7 @@ collections:
   # How It Works Steps
   - name: "steps"
     label: "How It Works Steps"
-    folder: "content/_steps"
+    folder: "_steps"
     create: true
     slug: "step-{{step_number}}"
     extension: md
@@ -62,7 +62,7 @@ collections:
   # SwapBox Features
   - name: "features"
     label: "SwapBox Features"
-    folder: "content/_features"
+    folder: "_features"
     create: true
     slug: "{{slug}}"
     extension: md
@@ -76,7 +76,7 @@ collections:
   # Pricing Plans
   - name: "pricing"
     label: "Pricing Plans"
-    folder: "content/_pricing"
+    folder: "_pricing"
     create: true
     slug: "{{slug}}"
     extension: md
@@ -93,7 +93,7 @@ collections:
   # Benefits (Why Choose Us)
   - name: "benefits"
     label: "Why Choose Us"
-    folder: "content/_benefits"
+    folder: "_benefits"
     create: true
     slug: "{{slug}}"
     extension: md
@@ -107,7 +107,7 @@ collections:
   # FAQ
   - name: "faq"
     label: "FAQ"
-    folder: "content/_faq"
+    folder: "_faq"
     create: true
     slug: "{{slug}}"
     extension: md
@@ -120,7 +120,7 @@ collections:
   # Testimonials
   - name: "testimonials"
     label: "Testimonials"
-    folder: "content/_testimonials"
+    folder: "_testimonials"
     create: true
     slug: "{{slug}}"
     extension: md
