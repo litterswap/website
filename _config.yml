@@ -41,4 +41,15 @@ exclude:
   - vendor
   - migrate_to_jekyll.py
   - README.md
-  - admin/
+  - README-MIGRATION.md
+  - QUICKSTART.md
+  - MIGRATION-SUMMARY.md
+  - NETLIFY-SETUP.md
+  - NETLIFY-BUILD-FIX.md
+  - ADMIN-SETUP-GITHUB.md
+  - GITHUB-BACKEND-UPDATE.md
+  - STATUS-FINAL.md
+  - FIX-SUMMARY.md
+  - RUN-ME-FIRST.txt
+  - sync-data.sh
+  - "*.md"

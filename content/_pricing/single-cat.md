@@ -1,0 +1,14 @@
+---
+name: "Single Cat"
+price: 35
+period: "per week"
+featured: false
+features:
+  - "1 SwapBox delivered weekly"
+  - "7 disposable litter boxes with lids"
+  - "7 bags (8lb each) of premium litter"
+  - "Weekly pickup & disposal"
+  - "Text reminders"
+  - "Cancel anytime"
+order: 1
+---

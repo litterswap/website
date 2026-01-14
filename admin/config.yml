@@ -51,6 +51,8 @@ collections:
     folder: "content/_steps"
     create: true
     slug: "step-{{step_number}}"
+    extension: md
+    format: yaml-frontmatter
     fields:
       - {label: "Step Number", name: "step_number", widget: "number", min: 1, max: 10}
       - {label: "Title", name: "title", widget: "string"}
@@ -63,6 +65,8 @@ collections:
     folder: "content/_features"
     create: true
     slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
     fields:
       - {label: "Feature Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
@@ -75,6 +79,8 @@ collections:
     folder: "content/_pricing"
     create: true
     slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
     fields:
       - {label: "Plan Name", name: "name", widget: "string"}
       - {label: "Price", name: "price", widget: "number"}
@@ -90,6 +96,8 @@ collections:
     folder: "content/_benefits"
     create: true
     slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
     fields:
       - {label: "Benefit Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
@@ -102,6 +110,8 @@ collections:
     folder: "content/_faq"
     create: true
     slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
     fields:
       - {label: "Question", name: "question", widget: "string"}
       - {label: "Answer", name: "answer", widget: "text"}
@@ -113,6 +123,8 @@ collections:
     folder: "content/_testimonials"
     create: true
     slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
     fields:
       - {label: "Customer Name", name: "name", widget: "string"}
       - {label: "Role/Description", name: "role", widget: "string", hint: "e.g., Cat mom of 2"}

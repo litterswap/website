@@ -1,0 +1,5 @@
+---
+question: "What if I miss pickup day?"
+answer: "No worries! We send text reminders 1-2 days before pickup. If you miss it, contact us and we'll reschedule at no extra charge."
+order: 1
+---
