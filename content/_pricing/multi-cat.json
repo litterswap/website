@@ -1,0 +1,17 @@
+{
+  "name": "Multi-Cat",
+  "price": 45,
+  "period": "per week",
+  "featured": true,
+  "badge": "Most Popular",
+  "features": [
+    "1 SwapBox delivered weekly",
+    "14 disposable litter boxes with lids",
+    "14 bags (8lb each) of premium litter",
+    "Weekly pickup & disposal",
+    "Perfect for 2-3 cats",
+    "Text reminders",
+    "Cancel anytime"
+  ],
+  "order": 2
+}
