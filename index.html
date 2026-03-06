@@ -85,6 +85,9 @@ title: DeLitterUp - Never Scoop Cat Litter Again
                 <div class="plan-name">{{ plan.name }}</div>
                 <div class="plan-price">${{ plan.price }}</div>
                 <div class="plan-period">{{ plan.period }}</div>
+                {% if plan.price_note %}
+                <div class="plan-price-note">{{ plan.price_note }}</div>
+                {% endif %}
                 <ul class="plan-features">
                     {% for feature in plan.features %}
                     <li>{{ feature }}</li>
@@ -238,7 +241,7 @@ title: DeLitterUp - Never Scoop Cat Litter Again
                     <select name="plan" required>
                         <option value="">Select...</option>
                         {% for plan in plans %}
-                        <option value="{{ plan.name | slugify }}">{{ plan.name }} - ${{ plan.price }}/week</option>
+                        <option value="{{ plan.name | slugify }}">{{ plan.name }} - ${{ plan.price }}/month</option>
                         {% endfor %}
                     </select>
                 </div>

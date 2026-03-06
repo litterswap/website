@@ -1,15 +1,15 @@
 ---
 name: "Multi-Cat"
-price: 45
-period: "per week"
+price: 43
+period: "per month"
+price_note: "+$10/mo per additional cat"
 featured: true
 badge: "Most Popular"
 features:
-  - "1 DeLitterUp delivered weekly"
-  - "14 disposable litter boxes with lids"
-  - "14 bags (8lb each) of premium litter"
+  - "Everything in Single Cat"
+  - "Extra supplies for 2 cats"
   - "Weekly pickup & disposal"
-  - "Perfect for 2-3 cats"
+  - "Perfect for 2 cats"
   - "Text reminders"
   - "Cancel anytime"
 order: 2

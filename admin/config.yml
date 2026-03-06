@@ -84,9 +84,10 @@ collections:
     fields:
       - {label: "Plan Name", name: "name", widget: "string"}
       - {label: "Price", name: "price", widget: "number"}
-      - {label: "Period", name: "period", widget: "string", default: "per week"}
+      - {label: "Period", name: "period", widget: "string", default: "per month"}
       - {label: "Featured Plan", name: "featured", widget: "boolean", default: false}
       - {label: "Badge Text", name: "badge", widget: "string", required: false, hint: "e.g., Most Popular"}
+      - {label: "Price Note", name: "price_note", widget: "string", required: false, hint: "e.g., Just $9.50/week"}
       - {label: "Features List", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
       - {label: "Display Order", name: "order", widget: "number", default: 1}
 
