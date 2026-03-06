@@ -1,7 +1,8 @@
 ---
 name: "Single Cat"
-price: 35
-period: "per week"
+price: 33
+period: "per month"
+price_note: "Just $9.50/week"
 featured: false
 features:
   - "1 DeLitterUp delivered weekly"

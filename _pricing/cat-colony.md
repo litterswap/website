@@ -1,14 +1,14 @@
 ---
 name: "Cat Colony"
-price: 65
-period: "per week"
+price: 53
+period: "per month"
+price_note: "+$10/mo per additional cat"
 featured: false
 features:
-  - "2 DeLitterUps delivered weekly"
-  - "21+ disposable litter boxes"
-  - "21+ bags of premium litter"
+  - "Everything in Single Cat"
+  - "Extra supplies for 3+ cats"
   - "Weekly pickup & disposal"
-  - "Perfect for 4+ cats"
+  - "Perfect for 3+ cats"
   - "Priority scheduling"
   - "Text reminders"
   - "Cancel anytime"

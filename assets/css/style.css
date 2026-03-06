@@ -319,6 +319,13 @@ section {
 
 .plan-period {
     color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.plan-price-note {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-style: italic;
     margin-bottom: 2rem;
 }
 
